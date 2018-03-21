@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Payment.Views.MainPage">
+    <StackLayout>
+         <StackLayout Orientation="Horizontal" Padding="20,10,20,0" HorizontalOptions="CenterAndExpand">
+            <StackLayout  HorizontalOptions="Start" HeightRequest="30" >
+                <Frame x:Name="FrameStart" CornerRadius="15" BackgroundColor="#443e42" Padding="1"  HasShadow="False" WidthRequest="30" HeightRequest="30">
+                    <Frame x:Name="FrameCercle1" BackgroundColor="White" HasShadow="False" CornerRadius="15"  WidthRequest="30" HeightRequest="30"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="0,20,0,0" HeightRequest="30">
+                <BoxView HeightRequest="0.5" WidthRequest="80" BackgroundColor="Silver" Margin="-7,-5,-7,0"/>
+            </StackLayout>
+            <StackLayout  HorizontalOptions="Center">
+                <Frame  x:Name="FrameCenter" CornerRadius="15" BackgroundColor="Gainsboro" Padding="1"  HasShadow="False" WidthRequest="30" HeightRequest="30">
+                    <Frame x:Name="FrameCercle2" BackgroundColor="White" HasShadow="False" CornerRadius="15"  WidthRequest="30" HeightRequest="30"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="0,20,0,0" HeightRequest="30">
+                <BoxView HeightRequest="0.5" WidthRequest="80" BackgroundColor="Silver" Margin="-7,-5,-7,0"/>
+            </StackLayout>
+            <StackLayout  HorizontalOptions="End" >
+                <Frame  x:Name="FrameEnd" CornerRadius="15" BackgroundColor="Silver" Padding="1" HasShadow="False" WidthRequest="30" HeightRequest="30">
+                    <Frame x:Name="FrameCercle3" BackgroundColor="White" HasShadow="False" CornerRadius="15"  WidthRequest="30" HeightRequest="30"/>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="60,-20,0,0">
+            <Label x:Name="step1" TextColor="Gray"  Text="1" Margin="30,0,0,0"/>
+            <Label x:Name="step2" TextColor="Silver" Text="2" Margin="93,0,0,0"/>
+            <Label x:Name="stepConfirm" TextColor="Silver" Text="Confirm" Margin="78,0,0,0"/>
+        </StackLayout>
+        
+        <ContentView x:Name="Step"/>        
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="Center">
+            <Button Text="Back" BackgroundColor="#FFC652" TextColor="White" HeightRequest="60" WidthRequest="190" Clicked="BackClicked"/>
+            <Button x:Name="BtnNext" Text="Next" BackgroundColor="#443E43" TextColor="White" HeightRequest="60" WidthRequest="190" 
+                    HorizontalOptions="FillAndExpand" ContentLayout="Right,0" Image="RightArrow.png" Clicked="NextClicked"/>
+        </StackLayout>
+        <StackLayout BackgroundColor="#443E43" VerticalOptions="End" Orientation="Horizontal" WidthRequest="50" HeightRequest="50">
+
+            <Image Source="Home.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="Search.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="Menu.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="Cart.png" WidthRequest="20" HeightRequest="20" HorizontalOptions="CenterAndExpand"/>
+            <Image Source="acc.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

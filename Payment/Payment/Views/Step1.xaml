@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Payment.Views.Step1">
+    <StackLayout >
+            <Label Text="How you would like to pay?" TextColor="Black" Margin="20,0,0,0"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Grid ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame  x:Name="ImageFrame1" BackgroundColor="White" Grid.Row="0" Grid.Column="0" HasShadow="False" Padding="1,1,1,1">
+                        <Frame BackgroundColor="White" HasShadow="False">
+                            <StackLayout>
+                                <Image Source="creditcard.png" HeightRequest="30"/>
+                                <Label Text="Credit Card"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_CreditCard">
+                            </TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame  x:Name="ImageFrame2" BackgroundColor="White" Grid.Row="0" Grid.Column="1" HasShadow="False" Padding="1,1,1,1">
+                        <Frame BackgroundColor="White" HasShadow="False">
+                            <StackLayout>
+                                <Image Source="BankTransfer.png" HeightRequest="30"/>
+                                <Label Text="Bank Transfer"/>
+                            </StackLayout>
+                        </Frame>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_BankTransfer">
+                            </TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+
+            <Label Text="Delivery options?" TextColor="Black" Margin="20,20,0,0"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                <Grid ColumnSpacing="10">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="90" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame   x:Name="ImageFrame3" BackgroundColor="White" Grid.Row="0" Grid.Column="0" HasShadow="False" Padding="0.8,0.8,0.8,0.8">
+                        <Frame BackgroundColor="White" HasShadow="False">
+                            <StackLayout>
+                                <Image Source="ExpressShipping.png" HeightRequest="30"/>
+                            <StackLayout  Margin="18,0,18,0">
+                                <Label Text="Express"/>
+                            </StackLayout>
+                        </StackLayout>
+                        </Frame>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Express">
+                            </TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Frame  x:Name="ImageFrame4" BackgroundColor="White" Grid.Row="0" Grid.Column="1" HasShadow="False" Padding="0.8,0.8,0.8,0.8">
+                        <Frame BackgroundColor="White" HasShadow="False">
+                            <StackLayout>
+                                <Image Source="NormalShipping.png" HeightRequest="30"/>
+                            <StackLayout  Margin="18,0,18,0">
+                                <Label Text="Normal"/>
+                            </StackLayout>
+                        </StackLayout>
+                        </Frame>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Normal">
+                            </TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <BoxView HeightRequest="1" Margin="20,0,20,0" BackgroundColor="#C9CACA" HorizontalOptions="FillAndExpand"/>
+                <StackLayout Orientation="Horizontal" Margin="30,15,30,15">
+                    <Label Text="Subtotal"  TextColor="Black" HorizontalOptions="Start"/>
+                    <Label Text="9000.00"  TextColor="Black" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="30,0,30,15">
+                    <Label Text="Shipping"  TextColor="Black" HorizontalOptions="Start"/>
+                    <Label Text="35.00"  TextColor="Black" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="30,0,30,15">
+                    <Label Text="VAT"  TextColor="Black" HorizontalOptions="Start"/>
+                    <Label Text="456.00"  TextColor="Black" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="30,0,30,15">
+                    <Label Text="TOTAL"  TextColor="Black" HorizontalOptions="Start" FontSize="18"/>
+                <Label Text="9450.00 SAR"  TextColor="Black" HorizontalOptions="EndAndExpand" FontSize="18"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" Margin="20,0,20,0" BackgroundColor="#C9CACA" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+    </StackLayout>
+</ContentView>

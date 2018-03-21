@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Payment.Step3">
+    
+    <StackLayout>
+        
+        <StackLayout>            
+            <Label Text="Please review your cart" TextColor="#272727"/>
+            <StackLayout Orientation="Vertical"   VerticalOptions="FillAndExpand" >
+                <ListView x:Name="List1"  HasUnevenRows="True"   VerticalOptions="Fill"  >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10*"/>
+                                        <ColumnDefinition Width="20*"/>
+                                        <ColumnDefinition Width="40*"/>
+                                        <ColumnDefinition Width="30*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                        <StackLayout VerticalOptions="Center" Grid.Row="0" Grid.Column="0" >
+                                        <Image Source="{Binding Close}" HeightRequest="15" WidthRequest="15">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ImageClose_Tapped">
+                                                </TapGestureRecognizer>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </StackLayout>
+                                        <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="1" HeightRequest="75" WidthRequest="75"/>
+                                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Grid.Row="0" Grid.Column="2">
+                                            <Label Text="{Binding Name}" FontSize="15" TextColor="Black"/>
+                                            <Label Text="{Binding Type}" FontSize="15" TextColor="Gray"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding Price}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="15" TextColor="Black"  Grid.Row="0" Grid.Column="3"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+        </StackLayout>        
+        
+        <StackLayout Orientation="Vertical">
+        <BoxView HeightRequest="1" Margin="20,0,20,0" BackgroundColor="#C9CACA" HorizontalOptions="FillAndExpand"/>
+        <StackLayout Orientation="Horizontal" Margin="30,15,30,15">
+            <Label Text="Subtotal"  TextColor="#272727" HorizontalOptions="Start"/>
+            <Label Text="9000.00"  TextColor="#272727" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="30,0,30,15">
+            <Label Text="Shipping"  TextColor="#272727" HorizontalOptions="Start"/>
+            <Label Text="35.00"  TextColor="#272727" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="30,0,30,15">
+            <Label Text="VAT"  TextColor="#272727" HorizontalOptions="Start"/>
+            <Label Text="456.00"  TextColor="#272727" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="30,0,30,15">
+                <Label Text="TOTAL"  TextColor="#272727" HorizontalOptions="Start" FontSize="18"/>
+                <Label Text="9450.00 SAR"  TextColor="#272727" HorizontalOptions="EndAndExpand" FontSize="18"/>
+        </StackLayout>
+        <BoxView HeightRequest="1" Margin="20,0,20,0" BackgroundColor="#C9CACA" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </StackLayout>
+</ContentView>
